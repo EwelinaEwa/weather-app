@@ -8,7 +8,6 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 3rem;
     color: white;
-    margin: 2.5rem;
     text-align: center;
 }
 
@@ -19,7 +18,7 @@ body {
     display: flex;
     box-sizing: border-box;
     width: 100%;
-    padding: 20px;
+    padding: 30px;
     margin-bottom: 5rem;
 }
 
@@ -74,4 +73,15 @@ body {
 .dailyForecast {
     background-color: #8AB6D6;
     padding: 3rem;
+}
+
+/*Footer*/
+
+#footer {
+    background-color: #2978B5;
+    box-sizing: border-box;
+    font-size: 2rem;
+    width: 100%;
+    padding: 20px;
+    margin-top: 5rem;
 }
