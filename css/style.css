@@ -67,7 +67,8 @@ body {
 #currentWeather {
     background-color: #8AB6D6;
     margin: 2rem 0;
-    padding: 10rem;
+    padding: 2rem;
+    line-height: 1.5;
 }
 
 .dailyForecast {
