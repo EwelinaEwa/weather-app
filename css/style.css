@@ -1,0 +1,77 @@
+/*yellow = #FBE0C4*/
+/*blue1 = #8AB6D6*/
+/*blue2 = #2978B5*/
+/*blue3 = #0061A8*/
+
+body {
+    background-color: #0061A8;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 3rem;
+    color: white;
+    margin: 2.5rem;
+    text-align: center;
+}
+
+/*Header*/
+
+#header {
+    background-color: #2978B5;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 5rem;
+}
+
+#logo {
+    height: 10rem;
+}
+
+.h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 5rem;
+    margin-top: 3rem;
+    margin-left: 4rem;
+}
+
+/*Search*/
+
+#request {
+    margin-bottom: 5rem;
+}
+
+#labelCity {
+    font-weight: bold;
+}
+
+#enterCity {
+    margin: 1.5rem;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+#showWeather {
+    background-color: #2978B5;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+    border-color: white;
+    border-style: solid;
+    border-width: medium;
+    border-radius: 10px;
+    padding: 0.5rem 2rem;
+}
+
+/*Forecast*/
+
+#currentWeather {
+    background-color: #8AB6D6;
+    margin: 2rem 0;
+    padding: 10rem;
+}
+
+.dailyForecast {
+    background-color: #8AB6D6;
+    padding: 3rem;
+}

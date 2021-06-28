@@ -5,31 +5,32 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet"></head>
 <body>
 
 <header id="header">
-
+    <img src="images/weather-news.png" alt="Logo" id="logo">
+    <h1 class="h1">Know the Weather</h1>
 </header>
 
 <main id="weatherContainer">
     <form id="request">
-        <label for="enterCity">Enter name of the city</label>
+        <label for="enterCity" id="labelCity">Enter name of the city</label>
         <br>
         <input type="text" id="enterCity">
         <br>
         <button id="showWeather">Show me the weather!</button>
     </form>
     <div id="forecast">
-        <div id="currentWeather"></div>
+        <div id="currentWeather">Current weather</div>
         <div id="weatherForecast">
-            <div id="day1"></div>
-            <div id="day2"></div>
-            <div id="day3"></div>
-            <div id="day4"></div>
-            <div id="day5"></div>
-            <div id="day6"></div>
-            <div id="day7"></div>
+            <div id="day1" class="dailyForecast">Day 1 forecast</div>
+            <div id="day2" class="dailyForecast">Day 2 forecast</div>
+            <div id="day4" class="dailyForecast">Day 3 forecast</div>
+            <div id="day3" class="dailyForecast">Day 4 forecast</div>
+            <div id="day5" class="dailyForecast">Day 5 forecast</div>
         </div>
     </div>
 </main>
