@@ -71,6 +71,14 @@ body {
     line-height: 1.5;
 }
 
+#description {
+    font-size: 2rem;
+}
+
+#maxminTemp {
+    font-size: 2rem;
+}
+
 .dailyForecast {
     background-color: #8AB6D6;
     padding: 3rem;
