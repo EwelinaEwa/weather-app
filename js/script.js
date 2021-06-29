@@ -1,15 +1,10 @@
-//Details shown after city is chosen
+let api = 'https://api.openweathermap.org/data/2.5/forecast?q=';
+let city = 'Brussels';
+let units = '&units=metric'
+let apiKey = '&APPID=f1fe3a5b2ff45140872785bfb2753205';
+let url = api+city+units+apiKey
 
-document.getElementById("showWeather").addEventListener("click", loadWeather);
-
-
-function loadWeather(){
-
-    const api = 'https://api.openweathermap.org/data/2.5/forecast?q=';
-    let city = document.getElementById("enterCity").value;
-    const units = '&units=metric'
-    const apiKey = '&APPID=f1fe3a5b2ff45140872785bfb2753205';
-    const url = api+city+units+apiKey
+function loadWeather(url){
 
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -18,7 +13,7 @@ function loadWeather(){
         if(this.status === 200){
             // hxr.status = this.status
             const forecast = JSON.parse(this.responseText);
-            document.getElementById("location").innerHTML = forecast.city.name;
+            document.getElementById("location").innerHTML = forecast.city.name+`, `+forecast.city.country;
             document.getElementById("icon").src = `http://openweathermap.org/img/wn/`+forecast.list[0].weather[0].icon+`@4x.png`;
             document.getElementById("description").innerHTML = (forecast.list[0].weather[0].description)[0].toUpperCase()+(forecast.list[0].weather[0].description).slice(1);
             document.getElementById("temperature").innerHTML = Math.round(forecast.list[0].main.temp)+' °C';
@@ -27,5 +22,15 @@ function loadWeather(){
         }
     }
     xhr.send();
-}
+};
 
+window.onload = function () {
+    loadWeather(url)
+};
+
+document.getElementById("showWeather").addEventListener("click", function() {
+    city = document.getElementById("enterCity").value;
+    url = api+city+units+apiKey
+    loadWeather(url)
+
+});
