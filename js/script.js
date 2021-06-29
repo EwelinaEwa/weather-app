@@ -28,31 +28,23 @@ function loadWeather(url){
             document.getElementById("maxTemp").innerHTML = Math.round(forecast.list[0].main.temp_max)+' °';
             document.getElementById("minTemp").innerHTML = Math.round(forecast.list[0].main.temp_min)+' °';
 
-            //Forecast
-
+            //Get all dates if hour = noon, so we are grabbing only one moment per day
 
             for (let i=0; i<forecast.list.length; i++) {
                 let hour = new Date(forecast.list[i].dt * 1000).getHours()-2;
                 if (hour === 12) {
                     dates.push(forecast.list[i])
-                    // console.log(dates)
-                    // console.log(hour)
                 }
             }
 
+            // Forecast
+
             for (let day=1; day<=5; day++) {
-                let dayName = new Date(dates[day-1].dt*1000).getDay()
-                    if (dayName === 0){dayName="Mon, "}
-                    if (dayName === 1){dayName="Tue, "}
-                    if (dayName === 2){dayName="Wed, "}
-                    if (dayName === 3){dayName="Thu, "}
-                    if (dayName === 4){dayName="Fri, "}
-                    if (dayName === 5){dayName="Sat, "}
-                    if (dayName === 6){dayName="Sun, "}
+                let dayName = new Date(dates[day-1].dt*1000).toLocaleString('en-us', {weekday:'short'});
                 let dayNumber = new Date(dates[day-1].dt * 1000).getDate();
                 let month = (new Date(dates[day-1].dt * 1000)).toLocaleString('default',{month:'short'});
 
-                document.getElementById(`date${day}`).innerHTML = dayName+dayNumber+` `+month;
+                document.getElementById(`date${day}`).innerHTML = dayName+`, `+dayNumber+` `+month;
                 document.getElementById(`icon${day}`).src = `http://openweathermap.org/img/wn/`+dates[day-1].weather[0].icon+`@2x.png`;
                 document.getElementById(`temperature${day}`).innerHTML = Math.round(dates[day-1].main.temp) + ' °C';
             }
