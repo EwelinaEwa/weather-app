@@ -81,8 +81,23 @@ body {
 
 .dailyForecast {
     background-color: #8AB6D6;
-    padding: 3rem;
+    padding: 1rem 4rem;
     display: flex;
+    align-items: center;
+}
+
+.dates {
+    flex-basis: 50%;
+    text-align: left;
+}
+
+.img {
+    flex-basis: 10%;
+}
+
+.temperature {
+    flex-basis: 40%;
+    text-align: right;
 }
 
 /*Footer*/
