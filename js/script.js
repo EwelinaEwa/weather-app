@@ -51,7 +51,7 @@ let loadWeather = url => {
                 let month = (new Date(dates[day-1].dt * 1000)).toLocaleString('default',{month:'short'});
 
                 document.getElementById(`date${day}`).innerHTML = dayName+`, `+dayNumber+` `+month;
-                document.getElementById(`icon${day}`).src = `https://openweathermap.org/img/wn/`+dates[day-1].weather[0].icon+`@2x.png`;
+                document.getElementById(`icon${day}`).src = `https://openweathermap.org/img/wn/`+dates[day-1].weather[0].icon+`@4x.png`;
                 document.getElementById(`temperature${day}`).innerHTML = Math.round(dates[day-1].main.temp) + ' °C';
             }
         }

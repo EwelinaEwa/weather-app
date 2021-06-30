@@ -121,9 +121,42 @@ body {
     margin-top: 2rem;
 }
 
-/*@media screen and (max-width: 700px) {*/
-/*    body {*/
-/*        background-color: #fc5185;*/
-/*    }*/
-/*}*/
+@media screen and (min-width: 426px) {
+    #forecast {
+        width: 90%;
+        margin: 0 auto;
+    }
+    #weatherForecast {
+        display: flex;
+    }
+    .dailyForecast {
+        display: block;
+        width: 25%;
+        margin: 0 1px;
+        padding: 2rem 0;
+    }
+    .dates, .temperature {
+        text-align: center;
+    }
+    .img {
+        padding: 1rem 0;
+    }
+}
 
+@media screen and (min-width: 769px) {
+    #forecast {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    #forecast {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1441px) {
+    #forecast {
+        width: 40%;
+    }
+}
