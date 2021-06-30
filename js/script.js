@@ -46,7 +46,7 @@ function loadWeather(url){
 
             // Forecast
 
-            for (let day=1; day<=4; day++) {
+            for (let day=1; day<5; day++) {
                 let dayName = new Date(dates[day-1].dt*1000).toLocaleString('en-us', {weekday:'short'});
                 let dayNumber = new Date(dates[day-1].dt * 1000).getDate();
                 let month = (new Date(dates[day-1].dt * 1000)).toLocaleString('default',{month:'short'});
@@ -66,6 +66,9 @@ window.onload = function () {
     loadWeather(url)
 };
 
+document.getElementById("enterCity").addEventListener("click", function() {
+    document.getElementById("enterCity").value = "";
+})
 
 //Get current weather for selected city
 
