@@ -31,9 +31,18 @@ function loadWeather(url){
             //Get all dates if hour = noon, so we are grabbing only one moment per day
 
             for (let i=0; i<forecast.list.length; i++) {
-                let hour = new Date(forecast.list[i].dt * 1000).getHours()-2;
-                if (hour === 12) {
-                    dates.push(forecast.list[i])
+                let day = new Date(forecast.list[i].dt * 1000).getDate();
+                console.log(day)
+                let currentDate = new Date().getDate();
+                console.log(currentDate)
+                    if (day === currentDate) {
+
+                    }
+                    else {
+                        let hour = new Date(forecast.list[i].dt * 1000).getHours()-2;
+                        if (hour === 12) {
+                            dates.push(forecast.list[i])
+                        }
                 }
             }
 
