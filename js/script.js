@@ -6,7 +6,6 @@ let city = 'Brussels';
 let units = '&units=metric'
 let apiKey = '&APPID=f1fe3a5b2ff45140872785bfb2753205';
 let url = api+city+units+apiKey
-let dates = []
 
 //Get weather from openweathermap
 
@@ -30,6 +29,7 @@ function loadWeather(url){
 
             //Get all dates if hour = noon, so we are grabbing only one moment per day
 
+            let dates = []
             for (let i=0; i<forecast.list.length; i++) {
                 let day = new Date(forecast.list[i].dt * 1000).getDate();
                 let currentDate = new Date().getDate();
@@ -41,7 +41,7 @@ function loadWeather(url){
                         if (hour === 12) {
                             dates.push(forecast.list[i])
                         }
-                }
+                    }
             }
 
             // Forecast
