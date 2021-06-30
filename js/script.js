@@ -32,9 +32,7 @@ function loadWeather(url){
 
             for (let i=0; i<forecast.list.length; i++) {
                 let day = new Date(forecast.list[i].dt * 1000).getDate();
-                console.log(day)
                 let currentDate = new Date().getDate();
-                console.log(currentDate)
                     if (day === currentDate) {
 
                     }
@@ -48,7 +46,7 @@ function loadWeather(url){
 
             // Forecast
 
-            for (let day=1; day<=5; day++) {
+            for (let day=1; day<=4; day++) {
                 let dayName = new Date(dates[day-1].dt*1000).toLocaleString('en-us', {weekday:'short'});
                 let dayNumber = new Date(dates[day-1].dt * 1000).getDate();
                 let month = (new Date(dates[day-1].dt * 1000)).toLocaleString('default',{month:'short'});
