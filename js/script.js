@@ -9,11 +9,11 @@ let url = api+city+units+apiKey
 
 //Get weather from openweathermap
 
-function loadWeather(url){
+let loadWeather = url => {
 
     xhr.open('GET', url, true);
 
-    xhr.onload = function(){
+    xhr.onload = () => {
         if(this.status === 200){
             // hxr.status = this.status
             const forecast = JSON.parse(this.responseText);
@@ -62,19 +62,16 @@ function loadWeather(url){
 
 //Get weather for Brussels on load
 
-window.onload = function () {
-    loadWeather(url)
-};
+window.onload = () => loadWeather(url);
 
-document.getElementById("enterCity").addEventListener("click", function() {
-    document.getElementById("enterCity").value = "";
-})
+//Clear previous search result on click
+
+document.getElementById("enterCity").addEventListener("click", () => document.getElementById("enterCity").value = "");
 
 //Get current weather for selected city
 
-document.getElementById("showWeather").addEventListener("click", function() {
+document.getElementById("showWeather").addEventListener("click", () => {
     city = document.getElementById("enterCity").value;
     url = api+city+units+apiKey
     loadWeather(url)
-
 });
