@@ -13,7 +13,7 @@ let loadWeather = url => {
 
     xhr.open('GET', url, true);
 
-    xhr.onload = () => {
+    xhr.onload = function(){
         if(this.status === 200){
             // hxr.status = this.status
             const forecast = JSON.parse(this.responseText);
