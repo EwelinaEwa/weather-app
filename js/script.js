@@ -75,3 +75,11 @@ document.getElementById("showWeather").addEventListener("click", () => {
     url = api+city+units+apiKey
     loadWeather(url)
 });
+
+document.getElementById("enterCity").addEventListener("keypress", (e) => {
+    if(e.key === "Enter") {
+        city = document.getElementById("enterCity").value;
+        url = api + city + units + apiKey
+        loadWeather(url)
+    }
+});
