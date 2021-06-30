@@ -6,7 +6,7 @@
 body {
     background-color: #0061A8;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 3rem;
+    font-size: 1.2rem;
     color: white;
     text-align: center;
 }
@@ -18,25 +18,24 @@ body {
     display: flex;
     box-sizing: border-box;
     width: 100%;
-    padding: 30px;
-    margin-bottom: 5rem;
+    padding: 10px 20px;
+    margin-bottom: 2rem;
 }
 
 #logo {
-    height: 10rem;
+    height: 2.5rem;
 }
 
 .h1 {
     font-family: 'Indie Flower', cursive;
-    font-size: 5rem;
-    margin-top: 3rem;
-    margin-left: 4rem;
+    margin-top: 0.6rem;
+    margin-left: 1rem;
 }
 
 /*Search*/
 
 #request {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 #labelCity {
@@ -44,46 +43,56 @@ body {
 }
 
 #enterCity {
-    margin: 1.5rem;
-    padding: 1rem;
-    font-size: 2rem;
+    width: 10rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
 }
 
 #showWeather {
     background-color: #2978B5;
     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
     color: white;
-    font-size: 2rem;
     font-weight: 300;
     border-color: white;
     border-style: solid;
-    border-width: medium;
+    border-width: thin;
     border-radius: 10px;
-    padding: 0.5rem 2rem;
+    padding: 0.2rem 1rem;
 }
 
 /*Forecast*/
 
 #currentWeather {
     background-color: #8AB6D6;
-    margin: 2rem 0;
-    padding: 2rem;
+    margin: 1rem 0;
+    padding: 1rem;
     line-height: 1.5;
 }
 
 #description {
-    font-size: 2rem;
+    font-size: 1rem;
+}
+
+#icon {
+    width: 6rem;
+}
+
+#temperature {
+    font-size: 1.5rem;
 }
 
 #maxminTemp {
-    font-size: 2rem;
+    font-size: 0.7rem;
 }
 
 .dailyForecast {
     background-color: #8AB6D6;
-    padding: 1rem 4rem;
+    font-size: 1rem;
+    padding: 0 2rem;
     display: flex;
     align-items: center;
+    margin-bottom: 1px;
 }
 
 .dates {
@@ -93,6 +102,7 @@ body {
 
 .img {
     flex-basis: 10%;
+    width: 3rem;
 }
 
 .temperature {
@@ -105,8 +115,15 @@ body {
 #footer {
     background-color: #2978B5;
     box-sizing: border-box;
-    font-size: 2rem;
+    font-size: 0.7rem;
     width: 100%;
     padding: 20px;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
+
+/*@media screen and (max-width: 700px) {*/
+/*    body {*/
+/*        background-color: #fc5185;*/
+/*    }*/
+/*}*/
+
