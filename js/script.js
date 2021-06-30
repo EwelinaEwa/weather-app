@@ -13,15 +13,14 @@ let loadWeather = url => {
 
     xhr.open('GET', url, true);
 
-    xhr.onload = function(){
-        if(this.status === 200){
-            // hxr.status = this.status
-            const forecast = JSON.parse(this.responseText);
+    xhr.onload = () => {
+        if(xhr.status === 200){
+            const forecast = JSON.parse(xhr.responseText);
 
             //Current weather
 
             document.getElementById("location").innerHTML = forecast.city.name+`, `+forecast.city.country;
-            document.getElementById("icon").src = `http://openweathermap.org/img/wn/`+forecast.list[0].weather[0].icon+`@4x.png`;
+            document.getElementById("icon").src = `https://openweathermap.org/img/wn/`+forecast.list[0].weather[0].icon+`@4x.png`;
             document.getElementById("description").innerHTML = (forecast.list[0].weather[0].description)[0].toUpperCase()+(forecast.list[0].weather[0].description).slice(1);
             document.getElementById("temperature").innerHTML = Math.round(forecast.list[0].main.temp)+' °C';
             document.getElementById("maxTemp").innerHTML = Math.round(forecast.list[0].main.temp_max)+' °';
@@ -52,7 +51,7 @@ let loadWeather = url => {
                 let month = (new Date(dates[day-1].dt * 1000)).toLocaleString('default',{month:'short'});
 
                 document.getElementById(`date${day}`).innerHTML = dayName+`, `+dayNumber+` `+month;
-                document.getElementById(`icon${day}`).src = `http://openweathermap.org/img/wn/`+dates[day-1].weather[0].icon+`@2x.png`;
+                document.getElementById(`icon${day}`).src = `https://openweathermap.org/img/wn/`+dates[day-1].weather[0].icon+`@2x.png`;
                 document.getElementById(`temperature${day}`).innerHTML = Math.round(dates[day-1].main.temp) + ' °C';
             }
         }
