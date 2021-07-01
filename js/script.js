@@ -22,9 +22,6 @@ let loadImage = unsplashUrl => {
         if(xhr.status === 200) {
             const locationImages = JSON.parse(xhr.responseText)
             document.getElementById("locationImage").src = locationImages.results[0].urls.regular;
-            console.log(locationImages.results[0].urls.regular)
-            // document.getElementById("currentWeather").style.zIndex="-1"
-            // document.getElementById("currentWeather").style.backgroundImage = "url('locationImages.results[0].urls.regular')";
         }
     }
     xhr.send()
