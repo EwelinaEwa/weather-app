@@ -1,5 +1,6 @@
 //Global variables
 
+//Openweathermap api
 const xhr = new XMLHttpRequest();
 let api = 'https://api.openweathermap.org/data/2.5/forecast?q=';
 let city = 'Brussels';
@@ -7,9 +8,31 @@ let units = '&units=metric'
 let apiKey = '&APPID=f1fe3a5b2ff45140872785bfb2753205';
 let url = api+city+units+apiKey
 
+//Unsplash api
+let unsplashApi = 'https://api.unsplash.com/search/photos?page=1&per_page=1&orienation=landscape&query=';
+let unsplashApiKey = '&client_id=DLxMGtSq3G-ePDzRXwcuGyxX0EaKwiKiaJFc8LAWLvs';
+let unsplashUrl = unsplashApi+city+unsplashApiKey
+
+
+//Get Unsplash image
+
+let loadImage = unsplashUrl => {
+    xhr.open('GET', unsplashUrl, true);
+    xhr.onload = () => {
+        if(xhr.status === 200) {
+            const locationImages = JSON.parse(xhr.responseText)
+            document.getElementById("locationImage").src = locationImages.results[0].urls.regular;
+            console.log(locationImages.results[0].urls.regular)
+            // document.getElementById("currentWeather").style.zIndex="-1"
+            // document.getElementById("currentWeather").style.backgroundImage = "url('locationImages.results[0].urls.regular')";
+        }
+    }
+    xhr.send()
+};
+
 //Get weather from openweathermap
 
-let loadWeather = url => {
+let loadWeather = (url, unsplashUrl) => {
 
     xhr.open('GET', url, true);
 
@@ -54,14 +77,17 @@ let loadWeather = url => {
                 document.getElementById(`icon${day}`).src = `https://openweathermap.org/img/wn/`+dates[day-1].weather[0].icon+`@4x.png`;
                 document.getElementById(`temperature${day}`).innerHTML = Math.round(dates[day-1].main.temp) + ' °C';
             }
+                loadImage(unsplashUrl)
         }
     }
+
     xhr.send();
+
 };
 
 //Get weather for Brussels on load
 
-window.onload = () => loadWeather(url);
+window.onload = () => loadWeather(url, unsplashUrl);
 
 //Clear previous search result on click
 
@@ -72,13 +98,16 @@ document.getElementById("enterCity").addEventListener("click", () => document.ge
 document.getElementById("showWeather").addEventListener("click", () => {
     city = document.getElementById("enterCity").value;
     url = api+city+units+apiKey
-    loadWeather(url)
+    unsplashUrl = unsplashApi+city+unsplashApiKey
+    loadWeather(url, unsplashUrl)
+
 });
 
 document.getElementById("enterCity").addEventListener("keypress", (e) => {
     if(e.key === "Enter") {
         city = document.getElementById("enterCity").value;
         url = api + city + units + apiKey
-        loadWeather(url)
+        unsplashUrl = unsplashApi+city+unsplashApiKey
+        loadWeather(url, unsplashUrl)
     }
 });

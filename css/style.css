@@ -69,10 +69,26 @@ body {
 /*Forecast*/
 
 #currentWeather {
-    background-color: #8AB6D6;
+    /*background-color: #8AB6D6;*/
     margin: 1rem 0;
     padding: 1rem;
     line-height: 1.5;
+    position: relative;
+    z-index: 0;
+}
+
+#locationImage {
+    background-color: white;
+    width: 314px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3px;
+    alignment: center;
+    z-index: -1;
+    /*opacity: 30%;*/
+    /*filter: brightness(150%);*/
 }
 
 #description {
