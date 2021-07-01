@@ -4,7 +4,10 @@
 /*blue3 = #0061A8*/
 
 body {
-    background-color: #2978B5;
+    background-image: url("../images/clouds2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1.2rem;
     color: white;
@@ -14,6 +17,8 @@ body {
 .wrapper {
     background-color: #0061A8;
     height: auto;
+    opacity: 80%;
+
 }
 
 /*Header*/
@@ -77,6 +82,7 @@ body {
     line-height: 1.5;
     position: relative;
     z-index: 0;
+
 }
 
 #locationImage {
@@ -89,6 +95,10 @@ body {
     alignment: center;
     z-index: -1;
     opacity: 70%;
+}
+
+#location {
+    padding-top: 10px;
 }
 
 #description {
@@ -110,10 +120,11 @@ body {
 .dailyForecast {
     background-color: #8AB6D6;
     font-size: 1rem;
-    padding: 0 2rem;
+    padding: 0 30px;
     display: flex;
     align-items: center;
-    margin-bottom: 1px;
+    margin: 0 auto 1px auto;
+    max-width: 260px;
 }
 
 .dates {
@@ -140,12 +151,30 @@ body {
     width: 100%;
     padding: 20px;
     margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
 }
 
-@media screen and (min-width: 426px) {
+#footer a {
+    text-decoration: none;
+    color: #8AB6D6;
+}
+
+
+@media screen and (min-width: 321px) {
+    #currentWeather {
+        border-radius: 5px;
+    }
+    #locationImage {
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 700px) {
     body {
         width: 700px;
         margin: auto;
+        padding-top: 50px;
     }
     #forecast {
         width: 500px;
@@ -166,5 +195,10 @@ body {
     .img {
         padding: 1rem 0;
     }
+    .dailyForecast {
+        border-radius: 5px;
+    }
 }
+
+
 
