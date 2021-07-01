@@ -4,11 +4,16 @@
 /*blue3 = #0061A8*/
 
 body {
-    background-color: #0061A8;
+    background-color: #2978B5;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 1.2rem;
     color: white;
     text-align: center;
+}
+
+.wrapper {
+    background-color: #0061A8;
+    height: auto;
 }
 
 /*Header*/
@@ -122,8 +127,12 @@ body {
 }
 
 @media screen and (min-width: 426px) {
+    body {
+        width: 700px;
+        margin: auto;
+    }
     #forecast {
-        width: 90%;
+        width: 500px;
         margin: 0 auto;
     }
     #weatherForecast {
@@ -143,20 +152,3 @@ body {
     }
 }
 
-@media screen and (min-width: 769px) {
-    #forecast {
-        width: 60%;
-    }
-}
-
-@media screen and (min-width: 1025px) {
-    #forecast {
-        width: 50%;
-    }
-}
-
-@media screen and (min-width: 1441px) {
-    #forecast {
-        width: 40%;
-    }
-}
