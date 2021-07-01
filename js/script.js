@@ -9,7 +9,7 @@ let apiKey = '&APPID=f1fe3a5b2ff45140872785bfb2753205';
 let url = api+city+units+apiKey
 
 //Unsplash api
-let unsplashApi = 'https://api.unsplash.com/search/photos?page=1&per_page=1&orienation=landscape&query=';
+let unsplashApi = 'https://api.unsplash.com/search/photos?page=1&per_page=1&orientation=landscape&query=';
 let unsplashApiKey = '&client_id=DLxMGtSq3G-ePDzRXwcuGyxX0EaKwiKiaJFc8LAWLvs';
 let unsplashUrl = unsplashApi+city+unsplashApiKey
 
